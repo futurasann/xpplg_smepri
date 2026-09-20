@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PPLG | Gallery</title>
+
+    <!-- FONT AWESOME ICONS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-gallery">
+
+    <!-- FLOATING & ROUNDED NAVBAR -->
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="img/logokelas.png" alt="Logo Kelas" class="nav-logo-img" onerror="this.src='https://via.placeholder.com/40?text=PPLG'">
+            <div class="nav-title">X-PPLG</span></div>
+        </a>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- FLOATING POPUP MENU WITH ICON -->
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="informasi.html"><i class="fa-solid fa-circle-info"></i> Informasi Kelas</a>
+        <a href="gallery.html" class="active-link"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="project.html"><i class="fa-solid fa-code"></i> Project</a>
+        <a href="team.html"><i class="fa-solid fa-users-gear"></i> Team Developer</a>
+    </div>
+
+    <!-- 2. GALLERY HERO HEADER -->
+    <section class="gallery-hero animate-up delay-1">
+        <div class="gallery-badge"><i class="fa-solid fa-camera-retro"></i> Visual Archive</div>
+        <h1 class="gallery-hero-title">Galeri <span>Momen X-PPLG</span></h1>
+        <p class="gallery-hero-desc">Kumpulan kenangan, proses pembelajaran, karya digital, dan setiap detik kebersamaan dalam perjalanan kelas kami.</p>
+    </section>
+
+    <!-- 3. FILTER BUTTONS -->
+    <div class="filter-container animate-up delay-2">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">
+            <i class="fa-solid fa-border-all"></i> Semua Momen
+        </button>
+        <button class="filter-btn" onclick="filterGallery('lab', this)">
+            <i class="fa-solid fa-laptop-code"></i> Praktik Lab
+        </button>
+        <button class="filter-btn" onclick="filterGallery('event', this)">
+            <i class="fa-solid fa-flag-checkered"></i> Event & Lomba
+        </button>
+
+        <button class="filter-btn" onclick="filterGallery('together', this)">
+            <i class="fa-solid fa-users"></i> Kebersamaan
+        </button>
+        <button class="filter-btn" onclick="filterGallery('project', this)">
+            <i class="fa-solid fa-gamepad"></i> Karya & Game
+        </button>
+    </div>
+
+    <!-- 4. GALLERY GRID SECTION -->
+    <section class="gallery-section animate-up delay-3">
+        <div class="gallery-grid" id="galleryGrid">
+            
+            <!-- Item 1: Kebersamaan -->
+            <div class="gallery-card" data-category="together" onclick="openLightbox('img/fotbarpramuka.jpg', 'Foto Bersama Kegiatan PTA', 'Sesi foto bersama sebelum melakukan kegiatan PTA (Penerimaan Tamu Ambalan) yang bertepatan dengan hari Pramuka', 'Kebersamaan', '14 Agustus 2026')">
+                <div class="gallery-img-wrapper">
+                    <span class="gallery-tag">Kebersamaan</span>
+                    <img src="img/fotbarpramuka.jpg" alt="Foto Bersama Pramuka" onerror="this.src='img/fotbarparmuka.jpg'">
+                    <div class="gallery-overlay-icon"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-item-title">Foto Bersama Kegiatan PTA</div>
+                    <div class="gallery-item-desc">Sesi foto bersama sebelum melakukan kegiatan PTA (Penerimaan Tamu Ambalan) yang bertepatan dengan hari Pramuka.</div>
+                    <div class="gallery-date"><i class="fa-regular fa-calendar-alt"></i> 14 Agustus 2026</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="lab" onclick="openLightbox('img/lab.jpg', 'Praktik Rakit PC di Lab', 'Momen seru saat merangkai komponen hardware satu per satu di laboratorium. Dari memasang prosesor hingga cable management, kami belajar memahami anatomi komputer secara langsung untuk mengasah keterampilan teknis.', 'Praktik Lab', '03 September 2026')">
+                <div class="gallery-img-wrapper">
+                    <span class="gallery-tag">Praktik Lab</span>
+                    <img src="img/lab.jpg" alt="Praktik Rakit PC di Lab" onerror="this.src='img/lab.jpg'">
+                    <div class="gallery-overlay-icon"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-item-title">Praktik Rakit PC di Lab</div>
+                    <div class="gallery-item-desc">Momen seru saat merangkai komponen hardware satu per satu di laboratorium. Dari memasang prosesor hingga cable management, kami belajar memahami anatomi komputer secara langsung untuk mengasah keterampilan teknis.</div>
+                    <div class="gallery-date"><i class="fa-regular fa-calendar-alt"></i> 03 September 2026</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="project" onclick="openLightbox('img/anekdot.jpg', 'Poster Teks Anekdot', 'Proses kreatif dalam menyalurkan kritik sosial dan humor lewat visual. Kami menggabungkan keterampilan desain grafis dengan penyampaian pesan yang tajam, unik, dan informatif.', 'Karya & Game', '20 Agustus 2026')">
+                <div class="gallery-img-wrapper">
+                    <span class="gallery-tag">Karya & Game</span>
+                    <img src="img/anekdot.jpg" alt="Poster Teks Anekdot" onerror="this.src='img/anekdot.jpg'">
+                    <div class="gallery-overlay-icon"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-item-title">Poster Teks Anekdot</div>
+                    <div class="gallery-item-desc">Proses kreatif dalam menyalurkan kritik sosial dan humor lewat visual. Kami menggabungkan keterampilan desain grafis dengan penyampaian pesan yang tajam, unik, dan informatif.</div>
+                    <div class="gallery-date"><i class="fa-regular fa-calendar-alt"></i> 20 Agustus 2026</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. LIGHTBOX MODAL POPUP -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-content">
+            <button class="lightbox-close-btn" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="lightbox-img-box">
+                <img id="lightboxImg" src="" alt="Zoomed View">
+            </div>
+            <div class="lightbox-body">
+                <div class="lightbox-tag" id="lightboxTag">Kategori</div>
+                <h3 class="lightbox-title" id="lightboxTitle">Judul Foto</h3>
+                <p class="lightbox-desc" id="lightboxDesc">Deskripsi detail foto...</p>
+                <div class="gallery-date" id="lightboxDate" style="margin-top: 10px;">
+                    <i class="fa-regular fa-calendar-alt"></i> <span>-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. FOOTER WITH LOGOS & ACTION BUTTONS -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logos">
+                <img src="img/logokelas.png" alt="Logo Kelas" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=PPLG'">
+                <img src="img/orbix.png" alt="Logo Dev Team" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=Orbix'">
+            </div>
+            <div class="footer-actions">
+                <a href="https://www.instagram.com/xpplg_smepri" target="_blank" class="btn-footer">
+                    <i class="fa-brands fa-instagram"></i> Instagram Kelas
+                </a>
+                <a href="https://www.instagram.com/smkspgri2cianjur" target="_blank" class="btn-footer">
+                    <i class="fa-solid fa-school"></i> Instagram Sekolah
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 X-PPLG — SMKS PGRI 2 CIANJUR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi Pop-Up saat Discroll (Scroll Reveal) — dengan failsafe.
+        (function () {
+            try {
+                document.body.classList.add('js-reveal-ready');
+                const revealItems = document.querySelectorAll('.animate-up');
+                if (!revealItems.length) return;
+
+                if (!('IntersectionObserver' in window)) {
+                    revealItems.forEach(item => item.classList.add('in-view'));
+                    return;
+                }
+
+                const revealObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealItems.forEach(item => revealObserver.observe(item));
+            } catch (err) {
+                document.body.classList.remove('js-reveal-ready');
+                console.error('Scroll reveal gagal, konten tetap ditampilkan normal:', err);
+            }
+        })();
+
+        // Loading Screen Fadeout
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                }
+            }, 1000);
+        });
+
+        // Toggle Floating Menu Popup
+        function toggleMenu() {
+            const popup = document.getElementById('menuPopup');
+            popup.classList.toggle('active');
+        }
+
+        // Filter Gallery Logic
+        function filterGallery(category, btnElement) {
+            // Update active state on buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.gallery-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Open Lightbox Modal
+        function openLightbox(imgSrc, title, desc, tag, date) {
+            const modal = document.getElementById('lightboxModal');
+            document.getElementById('lightboxImg').src = imgSrc;
+            document.getElementById('lightboxTitle').innerText = title;
+            document.getElementById('lightboxDesc').innerText = desc;
+            document.getElementById('lightboxTag').innerText = tag;
+            document.getElementById('lightboxDate').querySelector('span').innerText = date;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close Lightbox Modal
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close Modal when clicking outside the box
+        document.getElementById('lightboxModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

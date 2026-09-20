@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PPLG | Projects</title>
+
+    <!-- FONT AWESOME ICONS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-project">
+
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="img/logokelas.png" alt="Logo Kelas" class="nav-logo-img" onerror="this.src='https://via.placeholder.com/40?text=PPLG'">
+            <div class="nav-title">X-PPLG</span></div>
+        </a>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="informasi.html"><i class="fa-solid fa-circle-info"></i> Informasi Kelas</a>
+        <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="project.html" class="active-link"><i class="fa-solid fa-code"></i> Project</a>
+        <a href="team.html"><i class="fa-solid fa-users-gear"></i> Team Developer</a>
+    </div>
+
+    <section class="hero-project">
+        <div class="hero-subtitle animate-up delay-1"><i class="fa-solid fa-terminal"></i> INNOVATION & CODE VAULT</div>
+        <h1 class="hero-title animate-up delay-2">X-PPLG <span>PROJECT REALM</span></h1>
+        <p class="hero-desc animate-up delay-3">Kumpulan karya, gim interaktif, aplikasi web, dan prototipe perangkat lunak hasil eksplorasi logika & kreativitas siswa X-PPLG.</p>
+
+        <div class="stats-grid animate-up delay-4">
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Project Dirilis</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Game Interaktif</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Karya Mandiri Siswa</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="controls-wrapper animate-up delay-1">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all', this)"><i class="fa-solid fa-border-all"></i> Semua</button>
+                <button class="filter-btn" onclick="filterProjects('web', this)"><i class="fa-solid fa-globe"></i> Web Dev</button>
+                <button class="filter-btn" onclick="filterProjects('game', this)"><i class="fa-solid fa-gamepad"></i> Game Dev</button>
+                <button class="filter-btn" onclick="filterProjects('mobile', this)"><i class="fa-solid fa-mobile-screen-button"></i> Mobile / UI</button>
+                <button class="filter-btn" onclick="filterProjects('tools', this)"><i class="fa-solid fa-microchip"></i> Python / Tools</button>
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="projectSearch" onkeyup="searchProjects()" placeholder="Cari nama project atau keyword...">
+            </div>
+        </div>
+
+        <div class="spotlight-card animate-up delay-2">
+            <div class="spotlight-img-wrap">
+                <span class="spotlight-badge"><i class="fa-solid fa-star"></i> Featured Project</span>
+                <img src="img/project1.png" alt="Featured Project Banner" id="spotlightImg">
+            </div>
+            <div class="spotlight-info">
+                <div class="project-category"><i class="fa-solid fa-fire"></i> Flagship Release</div>
+                <h2 class="spotlight-title">X-PPLG Class Portal</h2>
+                <p class="spotlight-desc">Website portal resmi kelas X-PPLG SMKS PGRI 2 Cianjur. Dilengkapi direktori proyek, informasi siswa, album kegiatan, dan sistem interaktif modern.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3 Glassmorphism</span>
+                    <span class="tech-tag">JavaScript ES6</span>
+                    <span class="tech-tag">FontAwesome</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+        
+
+        </div>
+    </section>
+
+    <!-- MODAL: DEMO PROJECT (cadangan, dipakai oleh openDemoModal jika dibutuhkan) -->
+    <div class="modal-overlay" id="demoModal">
+        <div class="modal-body">
+            <button class="modal-close" onclick="closeDemoModal()" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="modal-title" id="demoTitle">Demo Proyek</h3>
+            <p style="color: var(--text-light); line-height: 1.8;" id="demoDesc">Deskripsi demo akan tampil di sini.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logos">
+                <img src="img/logokelas.png" alt="Logo Kelas" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=PPLG'">
+                <img src="img/orbix.png" alt="Logo Dev Team" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=Orbix'">
+            </div>
+            <!-- ACTION BUTTONS DENGAN ICON FONT AWESOME -->
+            <div class="footer-actions">
+                <a href="https://www.instagram.com/xpplg_smepri" target="_blank" class="btn-footer">
+                    <i class="fa-brands fa-instagram"></i> Instagram Kelas
+                </a>
+                <a href="https://www.instagram.com/smkspgri2cianjur" target="_blank" class="btn-footer">
+                    <i class="fa-solid fa-school"></i> Instagram Sekolah
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 X-PPLG — SMKS PGRI 2 CIANJUR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi Pop-Up saat Discroll (Scroll Reveal) — dengan failsafe.
+        // Ditaruh paling atas supaya tetap jalan duluan walau ada
+        // error di skrip lain di bawahnya. Kalau IntersectionObserver
+        // tidak didukung atau terjadi error, semua konten langsung
+        // ditampilkan (tidak ada yang hilang/blank).
+        (function () {
+            try {
+                document.body.classList.add('js-reveal-ready');
+                const revealItems = document.querySelectorAll('.animate-up');
+                if (!revealItems.length) return;
+
+                if (!('IntersectionObserver' in window)) {
+                    revealItems.forEach(item => item.classList.add('in-view'));
+                    return;
+                }
+
+                const revealObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealItems.forEach(item => revealObserver.observe(item));
+            } catch (err) {
+                document.body.classList.remove('js-reveal-ready');
+                console.error('Scroll reveal gagal, konten tetap ditampilkan normal:', err);
+            }
+        })();
+
+        // Loading Screen Fadeout
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                }
+            }, 900);
+        });
+
+        // Toggle Floating Menu Popup
+        function toggleMenu() {
+            const popup = document.getElementById('menuPopup');
+            if (popup) {
+                popup.classList.toggle('active');
+            }
+        }
+
+        // Project Category Filter Logic
+        function filterProjects(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const cards = document.querySelectorAll('#projectsGrid .project-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Live Search Logic
+        function searchProjects() {
+            const query = document.getElementById('projectSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('#projectsGrid .project-card');
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-title').toLowerCase();
+                const cardText = card.innerText.toLowerCase();
+
+                if (searchData.includes(query) || cardText.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Logic (Detail Proyek)
+        function openModal(title, desc, techStr, githubUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+
+            const techContainer = document.getElementById('modalTech');
+            techContainer.innerHTML = '';
+            techStr.split(',').forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'tech-tag';
+                span.innerText = tech.trim();
+                techContainer.appendChild(span);
+            });
+
+            document.getElementById('modalGithub').href = githubUrl || '#';
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+        }
+
+        // Demo Modal Logic
+        function openDemoModal(title, desc) {
+            document.getElementById('demoTitle').innerText = title;
+            document.getElementById('demoDesc').innerText = desc;
+            document.getElementById('demoModal').classList.add('active');
+        }
+
+        function closeDemoModal() {
+            document.getElementById('demoModal').classList.remove('active');
+        }
+
+        // Tutup modal saat klik area luar box
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            openModal('Gagasan Berhasil Terkirim!', 'Terima kasih telah mengajukan ide proyek untuk X-PPLG! Tim developer kami akan meninjau dan menghubungi kamu jika ide ini terpilih untuk dikembangkan.', 'Idea Submitted, Collaboration', '#');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PPLG | Pengembangan Perangkat Lunak dan Gim</title>
+
+    <!-- FONT AWESOME ICONS CDN (Menggantikan semua emoji dengan Icon modern) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-index">
+
+    <!-- 1. LOADING SCREEN ENHANCED WITH DUAL LOGOS -->
+    <div id="loading-screen">
+        <div class="loader-logos-wrapper">
+            <img src="img/logosekolah.png" alt="Logo Sekolah" class="loader-logo-img" onerror="this.src='https://via.placeholder.com/100?text=SMK+PGRI+2'">
+            <div class="loader-divider"></div>
+            <img src="img/logokelas.png" alt="Logo X-PPLG" class="loader-logo-img" onerror="this.src='https://via.placeholder.com/100?text=X-PPLG'">
+        </div>
+        <div class="loader-school">SMKS PGRI 2 CIANJUR</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- FLOATING & ROUNDED NAVBAR -->
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="img/logokelas.png" alt="Logo Kelas" class="nav-logo-img" onerror="this.src='https://via.placeholder.com/40?text=PPLG'">
+            <div class="nav-title">X-PPLG</span></div>
+        </a>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- FLOATING POPUP MENU WITH ICON -->
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="informasi.html"><i class="fa-solid fa-circle-info"></i> Informasi Kelas</a>
+        <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="project.html"><i class="fa-solid fa-code"></i> Project</a>
+        <a href="team.html"><i class="fa-solid fa-users-gear"></i> Team Developer</a>
+    </div>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle animate-up delay-1">WELCOME TO THE DIGITAL REALM</div>
+            <h1 class="hero-title animate-up delay-2">WE ARE <span>X-PPLG</span></h1>
+            <p class="hero-desc animate-up delay-3">Pengembangan Perangkat Lunak dan GIM. Tempat tumbuh bersama dalam kreativitas, kode, dan inovasi untuk masa depan.</p>
+        </div>
+    </section>
+
+    <!-- DESKRIPSI SINGKAT KELAS -->
+    <section>
+        <h2 class="section-title animate-up delay-1">Tentang Komunitas Kami</h2>
+        <div class="card animate-up delay-2">
+            <p style="color: var(--text-light); line-height: 1.8;">
+                Kami adalah kelas PPLG yang belajar, berkarya, dan berkembang bersama melalui teknologi dan kreativitas. Selain mempelajari pemrograman, desain, dan pengembangan gim, kami juga belajar tentang kerja sama, tanggung jawab, dan saling mendukung. Kami percaya bahwa setiap anggota memiliki potensi dan karakter yang berbeda, namun dapat tumbuh bersama menjadi satu kesatuan. Teknologi, termasuk Artificial Intelligence, kami manfaatkan sebagai alat untuk membantu belajar, mengeksplorasi ide, dan menciptakan karya baru.
+            </p>
+        </div>
+    </section>
+
+    <!-- INFORMASI SEKOLAH WITH FLOATING LOGO -->
+    <section>
+        <h2 class="section-title animate-up delay-1">Informasi Sekolah</h2>
+        <div class="card animate-up delay-2">
+            <div class="school-info-container">
+                <div class="school-info-text">
+                    <h3 style="color: var(--accent-green); font-size: 1.4rem; margin-bottom: 10px;">
+                        <i class="fa-solid fa-school-flag" style="margin-right: 8px;"></i> SMKS PGRI 2 CIANJUR
+                    </h3>
+                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 12px;">
+                        SMKS PGRI 2 Cianjur merupakan lembaga pendidikan kejuruan unggulan yang berdedikasi mencetak generasi profesional, berdaya saing tinggi, dan berkarakter di bidang teknologi informasi serta rekayasa perangkat lunak.
+                    </p>
+                    <div class="school-badge-list">
+                        <span class="school-badge"><i class="fa-solid fa-award"></i> Akreditasi A</span>
+                        <span class="school-badge"><i class="fa-solid fa-location-dot"></i> Cianjur, Jawa Barat</span>
+                        <span class="school-badge"><i class="fa-solid fa-laptop-code"></i> Pusat Keahlian IT</span>
+                    </div>
+                </div>
+                <div class="school-logo-wrapper">
+                    <img src="img/logosekolah.png" alt="Logo SMKS PGRI 2 CIANJUR" class="school-logo-floating floating-img" onerror="this.src='https://via.placeholder.com/170?text=Logo+Sekolah'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FOKUS KEAHLIAN WITH FONT AWESOME ICONS -->
+    <section>
+        <h2 class="section-title animate-up delay-1">Fokus Keahlian (Skillsets)</h2>
+        <div class="skills-grid">
+            <div class="card skill-card animate-up delay-1">
+                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="skill-title">Software Engineering</div>
+                <div class="skill-desc">Mempelajari logika pemrograman dasar, struktur data, dan pengembangan aplikasi web modern.</div>
+            </div>
+            <div class="card skill-card animate-up delay-2">
+                <div class="skill-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="skill-title">Game Development</div>
+                <div class="skill-desc">Merancang gameplay, asset visual, dan mekanik permainan interaktif 2D/3D.</div>
+            </div>
+            <div class="card skill-card animate-up delay-3">
+                <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
+                <div class="skill-title">UI/UX & Visual Art</div>
+                <div class="skill-desc">Mendesain antarmuka pengguna yang estetik, modern, clean, dan mudah digunakan.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ALBUM FOTO KELAS -->
+    <section>
+        <h2 class="section-title animate-up delay-1">Album Foto Kelas</h2>
+        <div class="album-grid">
+            <div class="album-item animate-up delay-1">
+                <img src="img/fotbarkelas.jpg" alt="Album 1">
+                <div class="album-overlay">Momen Fotbar Kelas</div>
+            </div>
+            <div class="album-item animate-up delay-2">
+                <img src="img/lab.jpg" alt="Album 2">
+                <div class="album-overlay">Sesi Jam Lab Komputer</div>
+            </div>
+            <div class="album-item animate-up delay-3">
+                <img src="img/fotbarpramuka.jpg" alt="Album 3">
+                <div class="album-overlay">Kegiatan Acara Sekolah</div>
+            </div>
+            <div class="album-item animate-up delay-4">
+                <img src="img/fotokelass.jpg" alt="Album 4">
+                <div class="album-overlay">Kebersamaan Harian</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. QUOTES -->
+    <section>
+        <h2 class="section-title animate-up delay-1">Quotes Kelas</h2>
+        <div class="quotes-grid">
+            <div class="card quote-card animate-up delay-2">
+                <div>"Lingkungan terbaik adalah ekosistem yang saling mendukung, seperti kode yang saling melengkapi."</div>
+                <div class="quote-author">— Futurasann</div>
+            </div>
+            <div class="card quote-card animate-up delay-3">
+                <div>"First, solve the problem. Then, write the code."</div>
+                <div class="quote-author">— Futurasann</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. KOMENTAR BERGERAK -->
+    <section class="marquee-section animate-up delay-1">
+        <h2 class="section-title" style="margin-left: 8%;">Apa Kata Mereka?</h2>
+        <div class="marquee-track">
+            <!-- Set 1 -->
+            <div class="comment-card">
+                <div class="comment-user">@H***1212</div>
+                <div class="comment-text">Kelas paling solid dan seru ceunah</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@R*******777</div>
+                <div class="comment-text">Gokill banget loh ya</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@a**********k225</div>
+                <div class="comment-text">Gokil banget loh ya,ditingkatin lagi woigh</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@R****a</div>
+                <div class="comment-text">Kelasnya bagus,sayangnya saya masih belum menemukan tombol skip pelajaran :o</div>
+            </div>
+
+            <!-- Set Duplicate -->
+            <div class="comment-card">
+                <div class="comment-user">@H***1212</div>
+                <div class="comment-text">Kelas paling solid dan seru ceunah</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@R*******777</div>
+                <div class="comment-text">Gokill banget loh ya</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@a**********k225</div>
+                <div class="comment-text">Gokil banget loh ya,ditingkatin lagi woigh</div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-user">@R****a</div>
+                <div class="comment-text">Kelasnya bagus,sayangnya saya masih belum menemukan tombol skip pelajaran :o</div>
+            </div>
+    </section>
+
+    <!-- 7. FOOTER WITH LOGOS ONLY & MODERN SOCIAL ICONS -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logos">
+                <img src="img/logokelas.png" alt="Logo Kelas" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=PPLG'">
+                <img src="img/orbix.png" alt="Logo Dev Team" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=Orbix'">
+            </div>
+            <!-- ACTION BUTTONS DENGAN ICON FONT AWESOME -->
+            <div class="footer-actions">
+                <a href="https://www.instagram.com/xpplg_smepri" target="_blank" class="btn-footer">
+                    <i class="fa-brands fa-instagram"></i> Instagram Kelas
+                </a>
+                <a href="https://www.instagram.com/smkspgri2cianjur" target="_blank" class="btn-footer">
+                    <i class="fa-solid fa-school"></i> Instagram Sekolah
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 X-PPLG — SMKS PGRI 2 CIANJUR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen Fadeout
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loading-screen');
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }, 1000);
+        });
+
+        // Toggle Floating Menu Popup
+        function toggleMenu() {
+            const popup = document.getElementById('menuPopup');
+            popup.classList.toggle('active');
+        }
+    
+        // Animasi Pop-Up saat Discroll (Scroll Reveal)
+        // Elemen dengan class .animate-up akan muncul begitu masuk
+        // ke area layar (viewport) saat pengguna menggeser ke bawah.
+        (function () {
+            const revealItems = document.querySelectorAll(".animate-up");
+            if (!revealItems.length) return;
+
+            const revealObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        obs.unobserve(entry.target); // animasi cukup sekali per elemen
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            revealItems.forEach(item => revealObserver.observe(item));
+        })();
+    </script>
+</body>
+</html>

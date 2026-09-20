@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PPLG | Information</title>
+
+    <!-- FONT AWESOME ICONS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* --- FAILSAFE UNTUK ANIMASI SCROLL DI HALAMAN INI ---
+           Default: semua elemen .animate-up TETAP TAMPIL biasa.
+           Efek "hilang lalu muncul saat discroll" baru aktif setelah
+           body diberi class .js-reveal-ready oleh JavaScript. Jadi
+           kalau skrip animasi gagal jalan karena sebab apa pun,
+           konten halaman tetap terlihat, tidak jadi kosong/blank. */
+        body.page-informasi .animate-up {
+            opacity: 1;
+            transform: none;
+        }
+
+        body.page-informasi.js-reveal-ready .animate-up {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+                        transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        body.page-informasi.js-reveal-ready .animate-up.in-view {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        body.page-informasi.js-reveal-ready .delay-1.in-view { transition-delay: 0.1s; }
+        body.page-informasi.js-reveal-ready .delay-2.in-view { transition-delay: 0.25s; }
+        body.page-informasi.js-reveal-ready .delay-3.in-view { transition-delay: 0.4s; }
+        body.page-informasi.js-reveal-ready .delay-4.in-view { transition-delay: 0.55s; }
+    </style>
+</head>
+<body class="page-informasi">
+
+    <!-- NAVBAR -->
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="img/logokelas.png" alt="Logo Kelas" class="nav-logo-img">
+            <div class="nav-title">X-PPLG</span></div>
+        </a>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- FLOATING POPUP MENU -->
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="informasi.html"><i class="fa-solid fa-circle-info"></i> Informasi Kelas</a>
+        <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="project.html"><i class="fa-solid fa-code"></i> Project</a>
+        <a href="team.html"><i class="fa-solid fa-users-gear"></i> Team Developer</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="page-header">
+            <span class="page-subtitle animate-up delay-1">Profil & Informasi Kelas</span>
+            <h1 class="page-title animate-up delay-2">PUSAT <span>INFORMASI KELAS</span></h1>
+            <p class="page-desc animate-up delay-3">Halaman resmi kepengurusan kelas serta interaktif denah ruang kelas X-PPLG.</p>
+        </div>
+
+        <!-- 1. INFO UMUM KELAS (SARAN TAMBAHAN) -->
+        <h2 class="section-title animate-up delay-1"><i class="fa-solid fa-clipboard-list"></i> Info Umum Kelas</h2>
+        <div class="info-umum-grid animate-up delay-2">
+            <div class="info-umum-card">
+                <span class="info-umum-label">Wali Kelas</span>
+                <span class="info-umum-value">Dedi Setya Kurdi N, S.T</span>
+            </div>
+            <div class="info-umum-card">
+                <span class="info-umum-label">Ruang Kelas</span>
+                <span class="info-umum-value">Tangga Atas 1</span>
+            </div>
+            <div class="info-umum-card">
+                <span class="info-umum-label">Jumlah Siswa</span>
+                <span class="info-umum-value">23 Siswa</span>
+            </div>
+            <div class="info-umum-card">
+                <span class="info-umum-label">Tahun Ajaran</span>
+                <span class="info-umum-value">2026/2027</span>
+            </div>
+        </div>
+
+        <!-- 2. STRUKTUR KELAS (RAPI, ATAS KE BAWAH) -->
+        <h2 class="section-title animate-up delay-1"><i class="fa-solid fa-sitemap"></i> Struktur Organisasi Kelas</h2>
+        <div class="org-chart animate-up delay-2">
+
+            <!-- Tingkat 1: Wali Kelas -->
+            <div class="org-row">
+                <div class="card-member">
+                    <img src="img/no.jpg" alt="Wali Kelas" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Wali Kelas</div>
+                        <div class="member-name">Dedi Setya Kurdi N, S.T</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tingkat 2: Ketua Murid -->
+            <div class="org-row">
+                <div class="card-member">
+                    <img src="img/Jibril.jpg" alt="KM" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Ketua Murid (KM)</div>
+                        <div class="member-name">Muhammad Jibril</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tingkat 3: Wakil Ketua Murid -->
+            <div class="org-row">
+                <div class="card-member">
+                    <img src="img/salman.jpg" alt="Wakil KM" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Wakil KM</div>
+                        <div class="member-name">M. Salman Rizky Parizy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tingkat 4: Sekretaris & Bendahara -->
+            <div class="org-row">
+                <div class="card-member">
+                    <img src="img/zulpa.jpg" alt="Sekretaris" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Sekretaris</div>
+                        <div class="member-name">Zulpa Maryanti</div>
+                    </div>
+                </div>
+                <div class="card-member">
+                    <img src="img/ratu.jpg" alt="Bendahara" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Bendahara</div>
+                        <div class="member-name">Ratu Saeina Septian Aryantika</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tingkat 5: Seksi-seksi -->
+            <div class="org-row">
+                <div class="card-member">
+                    <img src="img/khaidir.jpg" alt="Keamanan" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Seksi Keamanan</div>
+                        <div class="member-name">Khidir Syaputra</div>
+                    </div>
+                </div>
+                <div class="card-member">
+                    <img src="img/no.jpg" alt="Pendidikan" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Seksi Pendidikan</div>
+                        <div class="member-name">Tedy Sanjaya</div>
+                    </div>
+                </div>
+                <div class="card-member">
+                    <img src="img/no.jpg" alt="Kerohanian" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-role">Seksi Kerohanian</div>
+                        <div class="member-name">Muhammad Davi Alfiansyah</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 3. DENAH KELAS -->
+        <h2 class="section-title animate-up delay-1"><i class="fa-solid fa-chair"></i> Denah Tempat Duduk Kelas</h2>
+        <div class="denah-container animate-up delay-2">
+            
+            <div class="denah-top-row">
+                <div class="papan-tulis-area">
+                    <div class="papan-tulis"><i class="fa-solid fa-chalkboard"></i> PAPAN TULIS DEPAN</div>
+                    <div class="meja-guru"><i class="fa-solid fa-user-tie"></i> Meja Guru</div>
+                </div>
+                <div class="pintu-kelas">
+                    <i class="fa-solid fa-door-open"></i> PINTU KELAS
+                </div>
+            </div>
+
+            <div class="grid-meja-kelas">
+                <!-- BARIS 1 (DEPAN) -->
+                <div class="meja-card" onclick="openModal('Meja 1 (Depan Kiri)', 'Ifda Riana Hafida Yanti', 'anggota kelas', 'img/ratu.jpg', 'Ratu Saeina Septian Aryantika', 'Bendahara', 'img/no.jpg')">
+                    <div class="meja-title">Baris 1 - Meja 1</div>
+                    <div class="meja-occupants">
+                        <span>Ifda Riana Hafida Yanti</span>
+                        <span>Ratu Saeina Septian Aryantika</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 2 (Depan Tengah)', 'Zulpa Maryanti', 'Sekretaris', 'img/zulpa.jpg', 'Khalda Zakia', 'Anggota', 'img/no.jpg')">
+                    <div class="meja-title">Baris 1 - Meja 2</div>
+                    <div class="meja-occupants">
+                        <span>Zulpa Maryanti</span>
+                        <span>Khalda Zakia</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 3 (Depan Kanan)', 'Tedy Sanjaya', 'Seksi Pendidikan', 'img/no.jpg', 'Febrian Alamsyah', 'Anggota', 'img/febrian.jpg')">
+                    <div class="meja-title">Baris 1 - Meja 3</div>
+                    <div class="meja-occupants">
+                        <span>Tedy Sanjaya</span>
+                        <span>Febrian Alamsyah</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+
+                <!-- BARIS 2 -->
+                <div class="meja-card" onclick="openModal('Meja 4 (Baris 2 Kiri)', 'Muhammad Jibril', 'Ketua Murid', 'img/Jibril.jpg', 'M.Davi Alfiansyah', 'Seksi Kerohanian', 'img/no.jpg')">
+                    <div class="meja-title">Baris 2 - Meja 4</div>
+                    <div class="meja-occupants">
+                        <span>Muhammad Jibril</span>
+                        <span>M.Davi Alfiansyah</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 5 (Baris 2 Tengah)', 'Putri Anggraini', 'Anggota Kelas', 'img/no.jpg', 'Isnania Ningrum Putri', 'Anggota Kelas', 'img/no.jpg')">
+                    <div class="meja-title">Baris 2 - Meja 5</div>
+                    <div class="meja-occupants">
+                        <span>Putri Anggraini</span>
+                        <span>Isnania Ningrum Putri</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 6 (Baris 2 Kanan)', 'Muhammad Fazril', 'Anggota Kelas', 'img/fazril.jpg', 'M.Radika Saputra NG', 'Anggota Kelas', 'img/no.jpg')">
+                    <div class="meja-title">Baris 2 - Meja 6</div>
+                    <div class="meja-occupants">
+                        <span>Muhammad Fazril</span>
+                        <span>M.Radika Saputra NG</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+
+                <!-- BARIS 3 -->
+                <div class="meja-card" onclick="openModal('Meja 7 (Baris 3 Kiri)', 'Meja Kosong', '-', 'img/no.jpg', 'Muhammad Rival', 'Anggota Kelas', 'img/rival.jpg')">
+                    <div class="meja-title">Baris 3 - Meja 7</div>
+                    <div class="meja-occupants">
+                        <span>-</span>
+                        <span>Muhammad Rival</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 8 (Baris 3 Tengah)', 'Defita Nurmala Ibrahim', 'Anggota Kelas', 'img/no.jpg', 'Asyfa Cahya Maulani', 'Anggota Kelas', 'img/asyfa.jpg')">
+                    <div class="meja-title">Baris 3 - Meja 8</div>
+                    <div class="meja-occupants">
+                        <span>Defita Nurmala Ibrahim</span>
+                        <span>Asyfa Cahya Maulani</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 9 (Baris 3 Kanan)', 'Khaidir Syaputra', 'Seksi Keamanan', 'img/khaidir.jpg', 'Rikza Zahran Al Ghifari', 'Anggota Kelas', 'img/rikza.jpg')">
+                    <div class="meja-title">Baris 3 - Meja 9</div>
+                    <div class="meja-occupants">
+                        <span>Khaidir Syaputra</span>
+                        <span>Rikza Zahran Al Ghifari</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+
+                <!-- BARIS 4 (BELAKANG) -->
+                <div class="meja-card" onclick="openModal('Meja 10 (Belakang Kiri)', 'Muhammad Revan A', 'Anggota Kelas', 'img/no.jpg', 'M Al Aziz Maulana', 'Anggota Kelas', 'img/aziz.jpg')">
+                    <div class="meja-title">Baris 4 - Meja 10</div>
+                    <div class="meja-occupants">
+                        <span>Muhammad Revan A</span>
+                        <span>M Al Aziz Maulana</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 11 (Belakang Tengah)', 'M. Salman Rizky Parizy', 'Wakil Ketua Murid', 'img/salman.jpg', 'Adam Maulana', 'Anggota Kelas', 'img/adam.jpg')">
+                    <div class="meja-title">Baris 4 - Meja 11</div>
+                    <div class="meja-occupants">
+                        <span>M. Salman Rizky Parizy</span>
+                        <span>Adam Maulana</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+                <div class="meja-card" onclick="openModal('Meja 12 (Belakang Kanan)', 'M. Fahri Ramadhan', 'Anggota Kelas', 'img/fahri.jpg', 'M. Rio Derick Pratama', 'Anggota Kelas', 'img/no.jpg')">
+                    <div class="meja-title">Baris 4 - Meja 12</div>
+                    <div class="meja-occupants">
+                        <span>M. Fahri Ramadhan</span>
+                        <span>M. Rio Derick Pratama</span>
+                    </div>
+                    <span class="click-hint"><i class="fa-solid fa-eye"></i> Klik rincian</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- POPUP MODAL TAMPILAN SISWA -->
+    <div class="modal-overlay" id="denahModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title" id="modalDeskTitle">Rincian Siswa Bangku</div>
+            <div class="modal-students-grid">
+                <div class="student-profile">
+                    <img id="imgSiswa1" src="" alt="Foto Siswa" class="student-photo">
+                    <div class="student-name-popup" id="namaSiswa1">-</div>
+                    <div class="student-role-popup" id="roleSiswa1">-</div>
+                </div>
+                <div class="student-profile">
+                    <img id="imgSiswa2" src="" alt="Foto Siswa" class="student-photo">
+                    <div class="student-name-popup" id="namaSiswa2">-</div>
+                    <div class="student-role-popup" id="roleSiswa2">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- KESEPAKATAN KELAS SECTION --- -->
+    <section class="kesepakatan-section animate-up delay-1">
+        <h2 class="section-title">Kesepakatan Kelas</h2>
+        <p class="section-subtitle">Komitmen bersama untuk menciptakan kelas yang nyaman dan produktif</p>
+
+        <div class="kesepakatan-grid">
+            <div class="kesepakatan-card animate-up delay-1">
+                <div class="kesepakatan-number">01</div>
+                <h3>Penggunaan Gawai</h3>
+                <p>Gunakan gawai saat pembelajaran hanya untuk keperluan belajar atau setelah mendapat izin guru. Hindari penggunaan yang mengganggu proses pembelajaran.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-1">
+                <div class="kesepakatan-number">02</div>
+                <h3>Saling Menghormati</h3>
+                <p>Menghargai guru dan teman, mendengarkan saat orang lain berbicara, serta menghargai perbedaan pendapat.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-2">
+                <div class="kesepakatan-number">03</div>
+                <h3>Tepat Waktu</h3>
+                <p>Hadir tepat waktu, mengikuti kegiatan kelas dengan tertib, dan mengumpulkan tugas sesuai waktu yang ditentukan.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-2">
+                <div class="kesepakatan-number">04</div>
+                <h3>Aktif & Kondusif</h3>
+                <p>Berpartisipasi dalam pembelajaran, berdiskusi dengan baik, dan menjaga suasana kelas tetap nyaman.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-3">
+                <div class="kesepakatan-number">05</div>
+                <h3>Menjaga Kebersihan</h3>
+                <p>Melaksanakan piket sesuai jadwal, menjaga fasilitas kelas, dan tidak membuang sampah sembarangan.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-3">
+                <div class="kesepakatan-number">06</div>
+                <h3>Bertanggung Jawab</h3>
+                <p>Bertanggung jawab terhadap tugas, barang pribadi, fasilitas kelas, serta pekerjaan yang telah diberikan.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-4">
+                <div class="kesepakatan-number">07</div>
+                <h3>Jaga Privasi</h3>
+                <p>Tidak memotret, merekam, atau menyebarkan foto/video teman maupun kegiatan kelas tanpa izin.</p>
+            </div>
+
+            <div class="kesepakatan-card animate-up delay-4">
+                <div class="kesepakatan-number">08</div>
+                <h3>Selesaikan dengan Musyawarah</h3>
+                <p>Jika terjadi masalah, utamakan komunikasi, saling mendengarkan, dan menyelesaikannya dengan musyawarah.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logos">
+                <img src="img/logokelas.png" alt="Logo Kelas" class="footer-logo-img">
+                <img src="img/orbix.png" alt="Logo Dev Team" class="footer-logo-img">
+            </div>
+            <div class="footer-actions">
+                <a href="https://instagram.com/xpplg_smepri" target="_blank" class="btn-footer">
+                    <i class="fa-brands fa-instagram"></i> Instagram Kelas
+                </a>
+                <a href="https://instagram.com/smkspgri2cianjur" target="_blank" class="btn-footer">
+                    <i class="fa-solid fa-school"></i> Instagram Sekolah
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 X-PPLG — SMKS PGRI 2 CIANJUR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi Pop-Up saat Discroll (Scroll Reveal) — dengan failsafe.
+        // Ditaruh paling atas supaya tetap jalan duluan walau ada
+        // error di skrip lain di bawahnya. Kalau IntersectionObserver
+        // tidak didukung atau terjadi error, semua konten langsung
+        // ditampilkan (tidak ada yang hilang/blank).
+        (function () {
+            try {
+                document.body.classList.add('js-reveal-ready');
+                const revealItems = document.querySelectorAll('.animate-up');
+                if (!revealItems.length) return;
+
+                if (!('IntersectionObserver' in window)) {
+                    revealItems.forEach(item => item.classList.add('in-view'));
+                    return;
+                }
+
+                const revealObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            obs.unobserve(entry.target); // animasi cukup sekali per elemen
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealItems.forEach(item => revealObserver.observe(item));
+            } catch (err) {
+                // Gagal total? Batalkan mode animasi supaya konten tetap tampil.
+                document.body.classList.remove('js-reveal-ready');
+                console.error('Scroll reveal gagal, konten tetap ditampilkan normal:', err);
+            }
+        })();
+
+       // Toggle Menu
+        function toggleMenu() {
+            const popup = document.getElementById('menuPopup');
+            popup.classList.toggle('active');
+        }
+
+        // Modal Denah Kelas
+        function openModal(desk, n1, r1, img1, n2, r2, img2) {
+            document.getElementById('modalDeskTitle').innerText = desk;
+            
+            document.getElementById('namaSiswa1').innerText = n1;
+            document.getElementById('roleSiswa1').innerText = r1;
+            document.getElementById('imgSiswa1').src = img1;
+            
+            document.getElementById('namaSiswa2').innerText = n2;
+            document.getElementById('roleSiswa2').innerText = r2;
+            document.getElementById('imgSiswa2').src = img2;
+            
+            document.getElementById('denahModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('denahModal').classList.remove('active');
+        }
+
+        window.onclick = function(e) {
+            const modal = document.getElementById('denahModal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

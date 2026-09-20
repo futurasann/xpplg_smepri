@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PPLG | Team Developer</title>
+
+    <!-- FONT AWESOME ICONS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ==============================================================
+         PATCH CSS TAMBAHAN
+         Ditambahkan langsung di sini (bukan mengubah css/style.css)
+         supaya perubahan tidak konflik dengan stylesheet utama kelas.
+         Isinya: perbesar logo di dalam studio-logo-box + bikin
+         studio-card & studio-logo-box jadi responsif di semua layar.
+         ============================================================== -->
+    <style>
+        /* --- Perbesar box logo & gambar logo di dalamnya --- */
+        .studio-logo-box {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .studio-logo-img {
+            width: 100%;
+            height: 100%;
+            max-width: 64px;
+            max-height: 64px;
+            object-fit: contain;
+        }
+
+        /* --- Pastikan studio-card fleksibel & rapi di berbagai layar --- */
+        .studio-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .studio-info {
+            flex: 1 1 240px;
+            min-width: 0; /* biar teks tidak overflow di layar sempit */
+        }
+
+        /* --- Tablet --- */
+        @media (max-width: 992px) {
+            .studio-logo-box {
+                width: 80px;
+                height: 80px;
+            }
+            .studio-logo-img {
+                max-width: 56px;
+                max-height: 56px;
+            }
+        }
+
+        /* --- Mobile --- */
+        @media (max-width: 640px) {
+            .studio-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .studio-logo-box {
+                width: 74px;
+                height: 74px;
+                margin: 0 auto;
+            }
+            .studio-logo-img {
+                max-width: 50px;
+                max-height: 50px;
+            }
+            .studio-stats-list {
+                justify-content: center;
+            }
+        }
+
+        /* --- Layar sangat kecil --- */
+        @media (max-width: 400px) {
+            .studio-logo-box {
+                width: 64px;
+                height: 64px;
+            }
+            .studio-logo-img {
+                max-width: 44px;
+                max-height: 44px;
+            }
+            .hero-title {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="page-team">
+
+    <!-- FLOATING NAVBAR -->
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="img/logokelas.png" alt="Logo Kelas" class="nav-logo-img" onerror="this.src='https://via.placeholder.com/40?text=PPLG'">
+            <div class="nav-title">X-PPLG</span></div>
+        </a>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- POPUP MENU -->
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="informasi.html"><i class="fa-solid fa-circle-info"></i> Informasi Kelas</a>
+        <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="project.html"><i class="fa-solid fa-code"></i> Project</a>
+        <a href="team.html" class="active-link"><i class="fa-solid fa-users-gear"></i> Team Developer</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-team">
+        <div class="hero-subtitle animate-up delay-1"><i class="fa-solid fa-code-merge"></i> ARCHITECT & CREATOR VAULT</div>
+        <h1 class="hero-title animate-up delay-2">TEAM <span>DEVELOPER</span></h1>
+        <p class="hero-desc animate-up delay-3">Sosok kreatif dibalik perancangan, pengembangan kode, dan eksekusi antarmuka ekosistem portal digital X-PPLG SMKS PGRI 2 Cianjur.</p>
+    </section>
+
+    <section>
+        <!-- STUDIO SPOTLIGHT -->
+        <div class="team-grid">
+            <div class="studio-card animate-up delay-1">
+                <div class="studio-logo-box">
+                    <img src="img/orbix.png" alt="Orbix Studios Logo" class="studio-logo-img floating-img" onerror="this.src='https://via.placeholder.com/90/00ff88/050a07?text=ORBIX'">
+                </div>
+                <div class="studio-info">
+                    <span class="studio-tag"><i class="fa-solid fa-microchip"></i> Official Developer Unit</span>
+                    <h2 class="studio-name">Orbix Studios</h2>
+                    <p class="studio-desc">
+                        Dibangun melalui kolaborasi kreativitas manusia dan kecerdasan buatan. Tim Orbix Studios menentukan ide, konsep, dan arah proyek, sementara AI menjadi tools untuk membantu proses coding, desain, eksplorasi ide, dan pengembangan. Karena bagi kami, AI bukan pengganti developer—AI adalah bagian dari teknologi yang perlu dipelajari dan dimanfaatkan.
+                    </p>
+                    <div class="studio-stats-list">
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-user-check"></i> 50% Human × 50% AI
+                        </div>
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-bolt"></i> Glassmorphism UI Architecture
+                        </div>
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-shield-halved"></i> Solo Creator System
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDIO SPOTLIGHT - COLLAB TEAM -->
+            <div class="studio-card animate-up delay-2">
+                <div class="studio-logo-box">
+                    <img src="img/xbcp.png" alt="X-BCP Logo" class="studio-logo-img floating-img" onerror="this.src='https://via.placeholder.com/90/00ff88/050a07?text=BCP'">
+                </div>
+                <div class="studio-info">
+                    <span class="studio-tag"><i class="fa-solid fa-handshake"></i> Collaboration Partner</span>
+                    <h2 class="studio-name">X-BCP</h2>
+                    <p class="studio-desc">
+                        Tim kolaborasi dari X-BCP SMKS Manba'ul Ulum yang turut berkontribusi dalam pengembangan ekosistem portal digital X-PPLG. Kolaborasi lintas sekolah ini dibangun atas semangat berbagi ilmu, saling belajar, dan bertumbuh bersama di dunia pengembangan teknologi.
+                    </p>
+                    <div class="studio-stats-list">
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-school-flag"></i> SMKS Manba'ul Ulum
+                        </div>
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-people-group"></i> Cross-School Collaboration
+                        </div>
+                        <div class="studio-stat-item">
+                            <i class="fa-solid fa-code-branch"></i> Shared Development Unit
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFIL DEVELOPER UTAMA (KAMU SENDIRI) -->
+        <div class="profile-showcase-card animate-up delay-3">
+            <div class="profile-container">
+                <div class="profile-card-left">
+                    <div class="profile-avatar-wrap">
+                        <img src="img/no.jpg" alt="Foto Profil" class="profile-avatar" onerror="this.src='https://via.placeholder.com/180?text=Foto'">
+                        <div class="developer-badge"><i class="fa-solid fa-crown"></i></div>
+                    </div>
+                    <div class="profile-name">Tedy Sanjaya</div>
+                    <div class="profile-role">Lead Developer & Founder</div>
+                </div>
+                <div class="profile-info-right">
+                    <div>
+                        <h3 class="bio-title"><i class="fa-solid fa-user-pen"></i> Tentang Saya</h3>
+                        <p class="bio-text">
+                            Tedy Sanjaya adalah siswa kelas X PPLG yang berperan dalam pengembangan website resmi kelas, merancang antarmuka pengguna, serta mengimplementasikan berbagai fitur dan elemen interaktif untuk menciptakan website yang informatif dan menarik.
+
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="bio-title"><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
+                        <div class="skills-chips">
+                            <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                            <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="social-buttons">
+                        <a href="https://www.instagram.com/tesann25_" class="website-link-box" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://futurasann.my.id" class="website-link-box" target="_blank"><i class="fa-solid fa-globe"></i> Kunjungi Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logos">
+                <img src="img/logokelas.png" alt="Logo Kelas" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=PPLG'">
+                <img src="img/orbix.png" alt="Logo Dev Team" class="footer-logo-img" onerror="this.src='https://via.placeholder.com/45?text=Orbix'">
+            </div>
+            <!-- ACTION BUTTONS DENGAN ICON FONT AWESOME -->
+            <div class="footer-actions">
+                <a href="https://www.instagram.com/xpplg_smepri" target="_blank" class="btn-footer">
+                    <i class="fa-brands fa-instagram"></i> Instagram Kelas
+                </a>
+                <a href="https://www.instagram.com/smkspgri2cianjur" target="_blank" class="btn-footer">
+                    <i class="fa-solid fa-school"></i> Instagram Sekolah
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 X-PPLG — SMKS PGRI 2 CIANJUR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen Fadeout
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                }
+            }, 900);
+        });
+
+        // Toggle Floating Menu Popup
+        function toggleMenu() {
+            const popup = document.getElementById('menuPopup');
+            if (popup) {
+                popup.classList.toggle('active');
+            }
+        }
+    
+        // Animasi Pop-Up saat Discroll (Scroll Reveal)
+        // Elemen dengan class .animate-up akan muncul begitu masuk
+        // ke area layar (viewport) saat pengguna menggeser ke bawah.
+        (function () {
+            const revealItems = document.querySelectorAll(".animate-up");
+            if (!revealItems.length) return;
+
+            const revealObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        obs.unobserve(entry.target); // animasi cukup sekali per elemen
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            revealItems.forEach(item => revealObserver.observe(item));
+        })();
+    </script>
+</body>
+</html>
